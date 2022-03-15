@@ -1,15 +1,13 @@
 package zad1;
 
-import java.text.Format;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+@Data
+@AllArgsConstructor
 public final class Section extends Polygon {
     private Point x;
     private Point y;
-
-    public Section(Point x, Point y) {
-        this.x = x;
-        this.y = y;
-    }
 
     @Override
     public double getArea() {
@@ -25,20 +23,4 @@ public final class Section extends Polygon {
     public void printSummary() {
         System.out.printf("Area: %d,   Perimeter: %d,    Class: %s", getArea(), getPerimeter(), getDiameter());
     }*/
-
-    public Point getX() {
-        return x;
-    }
-
-    public void setX(Point x) {
-        this.x = x;
-    }
-
-    public Point getY() {
-        return y;
-    }
-
-    public void setY(Point y) {
-        this.y = y;
-    }
 }

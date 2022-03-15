@@ -18,10 +18,10 @@ class CircleTest {
     }
 
     @Test
-    @DisplayName("Circle - Area should be equal to 425")
-    void areaShouldBeEqualTo425() {
+    @DisplayName("Circle - Area should be equal to 452")
+    void areaShouldBeEqualTo452() {
         Circle circle = new Circle(x, 12);
-        Assertions.assertEquals(452.3893421169302, circle.getArea());
+        Assertions.assertEquals(452.38934/*21169302*/, circle.getArea(), 0.01);
     }
 
     @Test
@@ -35,7 +35,7 @@ class CircleTest {
     @DisplayName("Circle - Perimeter should be equal to 94")
     void perimeterShouldBeEqualTo94() {
         Circle circle = new Circle(x, 15);
-        Assertions.assertEquals(94.24777960769379, circle.getPerimeter());
+        Assertions.assertEquals(94.24777/*960769379*/, circle.getPerimeter(), 0.01);
     }
 
     @Test

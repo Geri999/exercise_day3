@@ -4,21 +4,26 @@ public sealed interface Shape permits Circle, Polygon {
     double getArea();
     double getPerimeter();
 
-
-    default String getDiameter() {
-//        return this.getClass().getSimpleName();
-        return switch (this.getClass().getSimpleName()) {
-            case "Shape" -> "Shape";
-            case "Circle" -> "Circle";
-            case "Section" -> "Section";
-            case "Triangle" -> "Triangle";
-            default -> "????";
+    default Double getDiameter(Shape shape) {
+        Double radius = switch (shape) {
+            case Circle c -> {
+                System.out.println("Circle");
+                yield c.radius();
+            }
+            case Section s -> {
+                System.out.println("Section");
+                yield s.getPerimeter() / 2;
+            }
+            case Triangle t -> {
+                System.out.println("Triangle");
+                yield t.getArea() / t.getS();
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + shape);
         };
+        return radius;
     }
 
-    default void printSummary() {
-        System.out.printf("|  Area: %10f |  Perimeter: %10f |  Class: %s%n", getArea(), getPerimeter(), getDiameter());
+    default void printSummary(Shape shape) {
+        System.out.printf("|  Area: %10f |  Perimeter: %10f |  The radius of the circle circumscribed on the shape: %10f%n", getArea(), getPerimeter(), getDiameter(shape));
     }
-
-
 }

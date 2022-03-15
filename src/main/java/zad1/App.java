@@ -19,12 +19,14 @@ public class App {
         figures.add(new Triangle(z,y,x));
         figures.add(new Section(z,y));
 
-        figures.forEach(Shape::printSummary);
+//        figures.forEach(Shape::printSummary);
+        figures.forEach(shape->shape.printSummary(shape));
         //https://www.emathhelp.net/en/calculators/algebra-2/circle-calculator/
         //https://www.triangle-calculator.com/?what=vc
 
 
         String description = """
+                
                 1.	Stworzyć nowy projekt oparty o Maven. Projekt powinien używać Javy w wersji 17.
                 2.	Stworzyć rekord Point reprezentujący punkt na płaszczyźnie
                     a.	składowymi rekordu powinny być współrzędne x i y (obydwie typu double)
