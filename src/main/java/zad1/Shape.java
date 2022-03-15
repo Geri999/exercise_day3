@@ -4,8 +4,8 @@ public sealed interface Shape permits Circle, Polygon {
     double getArea();
     double getPerimeter();
 
-    default Double getDiameter(Shape shape) {
-        Double radius = switch (shape) {
+    default double getDiameter(Shape shape) {
+        double radius = switch (shape) {
             case Circle c -> {
                 System.out.println("Circle");
                 yield c.radius();
