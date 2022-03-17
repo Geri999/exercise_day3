@@ -23,7 +23,6 @@ class CircleTest {
         Circle circle = new Circle(x, 12);
         Assertions.assertEquals(452.38934/*21169302*/, circle.getArea(), 0.01);
     }
-
     @Test
     @DisplayName("Circle - Area should be equal to 0")
     void areaShouldBeEqualToZero() {
@@ -35,7 +34,7 @@ class CircleTest {
     @DisplayName("Circle - Perimeter should be equal to 94")
     void perimeterShouldBeEqualTo94() {
         Circle circle = new Circle(x, 15);
-        Assertions.assertEquals(94.24777/*960769379*/, circle.getPerimeter(), 0.01);
+        Assertions.assertEquals(94.24777960769379, circle.getPerimeter(), 0.01);
     }
 
     @Test
